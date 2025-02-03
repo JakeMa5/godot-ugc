@@ -13,7 +13,7 @@ signal finished_transaction(data: Array)
 
 var _vertices: Array = []
 var _selected_vertex: int = -1
-var _vertex_tolerance: float = 32.0
+var _vertex_tolerance: float = 24.0
 var _is_dragging: bool = false
 var _hovered_vertex: int = -1
 

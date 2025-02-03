@@ -23,6 +23,9 @@ func _process(_delta: float) -> void:
 						var data_file = FileAccess.open("user://levels/%s" % file, FileAccess.READ)
 						var lvl = Level.new()
 						data_file.close()
+						
+						##TODO: Deserialize level data upon loading.
+						
 						GameManager.current_level = lvl
 				ImGui.EndMenu()
 
