@@ -149,10 +149,7 @@ func _get_nearest_point(start: Vector2, end: Vector2, point: Vector2) -> Vector2
 		return start  # Avoid division by zero if the line is a point
 	
 	line_dir = line_dir.normalized()
-	
-	# Project the point onto the line
 	var projection = (point - start).dot(line_dir)
 	projection = clamp(projection, 0, line_length)
-	
-	# Calculate the point on the line closest to the mouse click
+
 	return start + line_dir * projection

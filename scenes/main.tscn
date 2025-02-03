@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://cbwr4c2nu5nno"]
 
+[ext_resource type="Script" path="res://scripts/editor/tools/cursor/shape_cursor.gd" id="3_w2tb3"]
 [ext_resource type="Script" path="res://scripts/editor/editor_camera.gd" id="3_x7ox3"]
-[ext_resource type="Script" path="res://scripts/editor/tools/cursor/cursor.gd" id="4_s6433"]
 [ext_resource type="Script" path="res://scripts/debug/imgui/builder_debug.gd" id="5_m228v"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wffkr"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_tt685"]
 radius = 2.0
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ewl1t"]
@@ -17,11 +17,11 @@ size = Vector2(8000, 600)
 [node name="BuilderCamera" type="Camera2D" parent="."]
 script = ExtResource("3_x7ox3")
 
-[node name="SelectionCursor" type="Area2D" parent="."]
-script = ExtResource("4_s6433")
+[node name="ShapeCursor" type="Area2D" parent="."]
+script = ExtResource("3_w2tb3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SelectionCursor"]
-shape = SubResource("CircleShape2D_wffkr")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShapeCursor"]
+shape = SubResource("CircleShape2D_tt685")
 
 [node name="LevelBounds" type="StaticBody2D" parent="."]
 position = Vector2(0, 800)

@@ -47,7 +47,7 @@ func _process(_delta: float) -> void:
 						_level.append_object(obj)
 						
 					if ImGui.MenuItem("Circle"):
-						var num_vertices = 30  # Number of vertices to approximate a circle
+						var num_vertices = 30
 						var radius = 100
 						var center = Vector2(200, 200)
 						var verts = []
