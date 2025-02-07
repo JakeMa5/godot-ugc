@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://bp2sjqpu8yrvh"]
+
+[ext_resource type="Script" path="res://scripts/builder/cursors/selection_cursor.gd" id="1_0vieo"]
+[ext_resource type="Texture2D" uid="uid://biw3xkuq371t0" path="res://assets/cursors/cursor_arrow.png" id="2_36ukx"]
+[ext_resource type="Script" path="res://scripts/builder/level_objects/level_object.gd" id="2_lypwl"]
+[ext_resource type="Texture2D" uid="uid://cnk5c1mufsytr" path="res://assets/cursors/cursor_point.png" id="2_vey3t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udani"]
+size = Vector2(108, 58)
+
+[node name="Sandbox" type="Node"]
+
+[node name="SelectionCursor" type="Area2D" parent="."]
+script = ExtResource("1_0vieo")
+pointer_texture = ExtResource("2_vey3t")
+texture = ExtResource("2_36ukx")
+
+[node name="LevelObject" type="RigidBody2D" parent="."]
+position = Vector2(80, 80)
+gravity_scale = 0.0
+script = ExtResource("2_lypwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelObject"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_udani")

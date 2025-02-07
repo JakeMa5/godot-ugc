@@ -1,0 +1,21 @@
+[gd_scene load_steps=13 format=3 uid="uid://cp7g2fon8ilav"]
+
+[ext_resource type="Script" path="res://scripts/builder/cursors/material_brush_cursor/material_brush_cursor.gd" id="1_h5r8o"]
+[ext_resource type="Texture2D" uid="uid://8tymgm8fkv7n" path="res://assets/cursors/cursor_tool_brush.png" id="2_j0qax"]
+[ext_resource type="AudioStream" uid="uid://cua82gwsgq61c" path="res://assets/audio/soundfx/a_ui_tool_shape_editor_exit_vertex_mode.ogg" id="3_3afmo"]
+[ext_resource type="Texture2D" uid="uid://biw3xkuq371t0" path="res://assets/cursors/cursor_arrow.png" id="3_yx43n"]
+[ext_resource type="Script" path="res://scripts/builder/level_objects/materials/procedural_material.gd" id="4_1iasv"]
+[ext_resource type="Resource" uid="uid://b4xuyn7p61qrb" path="res://scripts/builder/level_objects/materials/forest_floor.tres" id="5_8mgpr"]
+[ext_resource type="Resource" uid="uid://h07gxb4r0xah" path="res://scripts/builder/level_objects/materials/grass.tres" id="6_p8f1x"]
+[ext_resource type="Resource" uid="uid://cpnt7asqtuve2" path="res://scripts/builder/level_objects/materials/wood.tres" id="7_8latb"]
+[ext_resource type="Resource" uid="uid://b8gqn6ycytwc3" path="res://scripts/builder/level_objects/materials/sand.tres" id="8_47mdk"]
+[ext_resource type="Resource" uid="uid://djw7yvyfuhwdv" path="res://scripts/builder/level_objects/materials/metal.tres" id="9_rn2cc"]
+[ext_resource type="Resource" uid="uid://diqq5x4mgg2bl" path="res://scripts/builder/level_objects/materials/stone.tres" id="10_1sjml"]
+[ext_resource type="Resource" uid="uid://b5ke4t5fve8fq" path="res://scripts/builder/level_objects/materials/dirt.tres" id="11_81qvc"]
+
+[node name="MaterialBrushCursor" type="Area2D"]
+script = ExtResource("1_h5r8o")
+material_edit_texutre = ExtResource("2_j0qax")
+change_material_audio_stream = ExtResource("3_3afmo")
+materials_list = Array[ExtResource("4_1iasv")]([ExtResource("5_8mgpr"), ExtResource("6_p8f1x"), ExtResource("7_8latb"), ExtResource("8_47mdk"), ExtResource("9_rn2cc"), ExtResource("10_1sjml"), ExtResource("11_81qvc")])
+texture = ExtResource("3_yx43n")

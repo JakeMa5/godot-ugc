@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://f23psc6ro2dr"]
+
+[node name="Toolbox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="TabBar" type="TabBar" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_vertical = 0
+current_tab = 0
+tab_alignment = 1
+max_tab_width = 128
+tab_count = 3
+tab_0/title = "Basic"
+tab_1/title = "Objects"
+tab_2/title = "Entities"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 8
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="Button5" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="Button6" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="Button7" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="Button8" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="Button9" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2

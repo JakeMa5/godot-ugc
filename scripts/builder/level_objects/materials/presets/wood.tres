@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MaterialPreset" load_steps=3 format=3 uid="uid://dbmstnn6maqvh"]
+
+[ext_resource type="Script" path="res://scripts/builder/level_objects/materials/material_preset.gd" id="1_bki8r"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w2xub"]
+rough = true
+
+[resource]
+script = ExtResource("1_bki8r")
+mass_multiplier = 1.0
+physics_material = SubResource("PhysicsMaterial_w2xub")

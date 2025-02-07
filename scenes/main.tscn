@@ -1,38 +1,3 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbwr4c2nu5nno"]
-
-[ext_resource type="Script" path="res://scripts/editor/tools/cursor/shape_cursor.gd" id="3_w2tb3"]
-[ext_resource type="Script" path="res://scripts/editor/editor_camera.gd" id="3_x7ox3"]
-[ext_resource type="Script" path="res://scripts/debug/imgui/builder_debug.gd" id="5_m228v"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_tt685"]
-radius = 2.0
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ewl1t"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sv8k3"]
-size = Vector2(8000, 600)
+[gd_scene format=3 uid="uid://btsimgfkphbse"]
 
 [node name="Main" type="Node"]
-
-[node name="BuilderCamera" type="Camera2D" parent="."]
-script = ExtResource("3_x7ox3")
-
-[node name="ShapeCursor" type="Area2D" parent="."]
-script = ExtResource("3_w2tb3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ShapeCursor"]
-shape = SubResource("CircleShape2D_tt685")
-
-[node name="LevelBounds" type="StaticBody2D" parent="."]
-position = Vector2(0, 800)
-
-[node name="Sprite2D" type="Sprite2D" parent="LevelBounds"]
-texture = SubResource("PlaceholderTexture2D_ewl1t")
-region_enabled = true
-region_rect = Rect2(0, 0, 8000, 600)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds"]
-shape = SubResource("RectangleShape2D_sv8k3")
-
-[node name="BuilderDebug" type="Node" parent="."]
-script = ExtResource("5_m228v")

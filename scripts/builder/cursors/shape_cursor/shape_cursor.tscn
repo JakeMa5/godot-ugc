@@ -1,0 +1,16 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfs0yvde88vly"]
+
+[ext_resource type="Script" path="res://scripts/builder/cursors/shape_cursor/shape_cursor.gd" id="1_fkq3y"]
+[ext_resource type="Texture2D" uid="uid://dp6vqp1ydnbee" path="res://assets/cursors/cursor_tool_shape_editor.png" id="2_j7c76"]
+[ext_resource type="Texture2D" uid="uid://biw3xkuq371t0" path="res://assets/cursors/cursor_arrow.png" id="3_be5vi"]
+[ext_resource type="Texture2D" uid="uid://bmiuq2r63me6c" path="res://assets/cursors/cursor_tool_vertex_editor.png" id="3_kdcwb"]
+[ext_resource type="AudioStream" uid="uid://b64vsrgko8l0l" path="res://assets/audio/soundfx/a_ui_tool_shape_editor_enter_vertex_mode.ogg" id="4_j7ywq"]
+[ext_resource type="AudioStream" uid="uid://cua82gwsgq61c" path="res://assets/audio/soundfx/a_ui_tool_shape_editor_exit_vertex_mode.ogg" id="5_x7njh"]
+
+[node name="ShapeCursor" type="Area2D"]
+script = ExtResource("1_fkq3y")
+shape_edit_texutre = ExtResource("2_j7c76")
+vert_edit_texture = ExtResource("3_kdcwb")
+enter_vertex_editor_audio_stream = ExtResource("4_j7ywq")
+exit_vertex_editor_audio_stream = ExtResource("5_x7njh")
+texture = ExtResource("3_be5vi")

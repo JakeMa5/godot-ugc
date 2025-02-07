@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ProceduralMaterial" load_steps=4 format=3 uid="uid://djw7yvyfuhwdv"]
+
+[ext_resource type="Script" path="res://scripts/builder/level_objects/materials/procedural_material.gd" id="1_7uqsq"]
+[ext_resource type="Resource" uid="uid://dbmstnn6maqvh" path="res://scripts/builder/level_objects/materials/presets/wood.tres" id="1_h5rop"]
+[ext_resource type="Texture2D" uid="uid://ceepb7i1yqd7v" path="res://assets/materials/basic/CodezlyBasicTexturePack1(free)_512_4.png" id="2_4u01c"]
+
+[resource]
+script = ExtResource("1_7uqsq")
+name = "Metal"
+texture = ExtResource("2_4u01c")
+preset = ExtResource("1_h5rop")

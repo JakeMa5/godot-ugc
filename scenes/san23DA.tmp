@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://bp2sjqpu8yrvh"]
+
+[ext_resource type="Script" path="res://scripts/builder/level_objects/level_object.gd" id="2_lypwl"]
+[ext_resource type="Script" path="res://scripts/builder/builder_camera.gd" id="5_8gt1u"]
+[ext_resource type="Script" path="res://scripts/builder/level_objects/procedural_shape.gd" id="5_52hq7"]
+[ext_resource type="PackedScene" uid="uid://dyyw3mrms86lk" path="res://scripts/ui/builder/hud/builder_hud.tscn" id="5_cq1x2"]
+[ext_resource type="PackedScene" uid="uid://bwc0jjc5w5pmo" path="res://scripts/ui/builder/demo_window/demo_window.tscn" id="6_k1pt0"]
+[ext_resource type="Texture2D" uid="uid://bpiwldijnqkgd" path="res://icon.svg" id="8_njnwo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udani"]
+size = Vector2(108, 58)
+
+[node name="Sandbox" type="Node"]
+
+[node name="LevelObject" type="RigidBody2D" parent="."]
+position = Vector2(53, 488)
+gravity_scale = 0.0
+script = ExtResource("2_lypwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelObject"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_udani")
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelObject"]
+use_parent_material = true
+texture = ExtResource("8_njnwo")
+
+[node name="ProceduralShape" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+script = ExtResource("5_52hq7")
+
+[node name="BuilderHud" parent="." instance=ExtResource("5_cq1x2")]
+
+[node name="BuilderCamera" type="Camera2D" parent="."]
+script = ExtResource("5_8gt1u")
+
+[node name="DemoWindow" parent="." instance=ExtResource("6_k1pt0")]
+position = Vector2i(1052, 176)

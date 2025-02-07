@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bp2sjqpu8yrvh"]
+
+[ext_resource type="Script" path="res://scripts/builder/builder_camera.gd" id="5_8gt1u"]
+[ext_resource type="PackedScene" uid="uid://dyyw3mrms86lk" path="res://scripts/ui/builder/hud/builder_hud.tscn" id="5_cq1x2"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lf7cu"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hcisa"]
+
+[node name="Sandbox" type="Node"]
+
+[node name="BuilderHud" parent="." instance=ExtResource("5_cq1x2")]
+
+[node name="BuilderCamera" type="Camera2D" parent="."]
+script = ExtResource("5_8gt1u")
+
+[node name="WorldBoundary" type="StaticBody2D" parent="."]
+position = Vector2(0, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary"]
+shape = SubResource("WorldBoundaryShape2D_lf7cu")
+
+[node name="Sprite2D" type="Sprite2D" parent="WorldBoundary"]
+texture = SubResource("PlaceholderTexture2D_hcisa")
+centered = false
+offset = Vector2(-4000, 0)
+region_enabled = true
+region_rect = Rect2(0, 0, 8000, 800)

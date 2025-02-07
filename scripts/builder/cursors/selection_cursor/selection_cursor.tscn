@@ -1,0 +1,34 @@
+[gd_scene load_steps=16 format=3 uid="uid://d2os7rb631dj6"]
+
+[ext_resource type="Script" path="res://scripts/builder/cursors/selection_cursor/selection_cursor.gd" id="1_r1vvg"]
+[ext_resource type="Texture2D" uid="uid://cnk5c1mufsytr" path="res://assets/cursors/cursor_point.png" id="2_uupn4"]
+[ext_resource type="Texture2D" uid="uid://dsrp8pfhj1pwy" path="res://assets/cursors/cursor_hand_open.png" id="3_jv2ru"]
+[ext_resource type="Texture2D" uid="uid://df3j44shut7af" path="res://assets/cursors/cursor_hand_closed.png" id="4_n27fl"]
+[ext_resource type="Texture2D" uid="uid://ddmrg02bii6wj" path="res://assets/cursors/cursor_eraser.png" id="5_lg67j"]
+[ext_resource type="Texture2D" uid="uid://be372hjgbo2aw" path="res://assets/cursors/cursor_tool_property_editor.png" id="6_samis"]
+[ext_resource type="Texture2D" uid="uid://c5p53312qy1qp" path="res://assets/cursors/cursor_tool_scale.png" id="7_eicao"]
+[ext_resource type="AudioStream" uid="uid://utib1sh82bys" path="res://assets/audio/soundfx/a_ui_tool_selection_select.ogg" id="7_gkdeh"]
+[ext_resource type="AudioStream" uid="uid://w21pprr56iln" path="res://assets/audio/soundfx/a_ui_tool_selection_delete.ogg" id="8_8l681"]
+[ext_resource type="Texture2D" uid="uid://bw736oblso2ih" path="res://assets/cursors/cursor_tool_rotate.png" id="8_q7go5"]
+[ext_resource type="AudioStream" uid="uid://cvlums70i6jvk" path="res://assets/audio/soundfx/a_ui_tool_switch.ogg" id="9_jp34o"]
+[ext_resource type="Texture2D" uid="uid://biw3xkuq371t0" path="res://assets/cursors/cursor_arrow.png" id="10_32jx7"]
+[ext_resource type="AudioStream" uid="uid://7mn6wlos8u0t" path="res://assets/audio/soundfx/a_ui_tool_scale_up.ogg" id="11_ssyf5"]
+[ext_resource type="AudioStream" uid="uid://corw2lfu2iill" path="res://assets/audio/soundfx/a_ui_tool_selection_grab.ogg" id="11_ym6et"]
+[ext_resource type="AudioStream" uid="uid://dw7gg12u2nj0q" path="res://assets/audio/soundfx/a_ui_tool_scale_down.ogg" id="12_7i1dt"]
+
+[node name="SelectionCursor" type="Area2D"]
+script = ExtResource("1_r1vvg")
+pointer_texture = ExtResource("2_uupn4")
+grabbable_texture = ExtResource("3_jv2ru")
+grabbing_texture = ExtResource("4_n27fl")
+deleting_texture = ExtResource("5_lg67j")
+properties_texture = ExtResource("6_samis")
+scale_texture = ExtResource("7_eicao")
+rotate_texture = ExtResource("8_q7go5")
+select_audio_stream = ExtResource("7_gkdeh")
+delete_audio_stream = ExtResource("8_8l681")
+drag_audio_stream = ExtResource("11_ym6et")
+switch_tool_audio_stream = ExtResource("9_jp34o")
+scale_up_audio_stream = ExtResource("11_ssyf5")
+scale_down_audio_stream = ExtResource("12_7i1dt")
+texture = ExtResource("10_32jx7")

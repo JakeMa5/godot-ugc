@@ -1,0 +1,156 @@
+[gd_scene load_steps=9 format=3 uid="uid://dyyw3mrms86lk"]
+
+[ext_resource type="PackedScene" uid="uid://bap5pf5c61iup" path="res://scripts/ui/builder/hud/toolbar/toolbar.tscn" id="1_31h0b"]
+[ext_resource type="Script" path="res://scripts/ui/builder/hud/builder_hud.gd" id="1_dpxch"]
+[ext_resource type="Texture2D" uid="uid://ccv05v02tevnm" path="res://assets/icons/tools/t_builder_toolbox.png" id="3_jp2bj"]
+[ext_resource type="Script" path="res://scripts/ui/builder/hud/toolbox_button.gd" id="4_xivpf"]
+[ext_resource type="PackedScene" uid="uid://bq257pdye4tp8" path="res://scripts/ui/popup_menu/popup_menu.tscn" id="5_hi3xx"]
+[ext_resource type="AudioStream" uid="uid://htwvd3rxyhva" path="res://assets/audio/soundfx/a_ui_toolbox_open.ogg" id="6_ldklj"]
+[ext_resource type="AudioStream" uid="uid://ywxb62jdideo" path="res://assets/audio/soundfx/a_ui_toolbox_close.ogg" id="7_p06tu"]
+[ext_resource type="AudioStream" uid="uid://dgj4pu38wb7lo" path="res://assets/audio/soundfx/a_ui_toolbox_create_object.ogg" id="8_1xrcu"]
+
+[node name="BuilderHud" type="CanvasLayer"]
+script = ExtResource("1_dpxch")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainArea" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MainArea"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 120.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MainArea/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MainArea/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Toolbar" parent="VBoxContainer/MainArea/PanelContainer/VBoxContainer/MarginContainer" instance=ExtResource("1_31h0b")]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MainArea/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MainArea/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Button" type="Button" parent="VBoxContainer/MainArea/PanelContainer/VBoxContainer/MarginContainer3"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "Open Toolbox"
+toggle_mode = true
+icon = ExtResource("3_jp2bj")
+expand_icon = true
+script = ExtResource("4_xivpf")
+popup_menu_scene = ExtResource("5_hi3xx")
+opened_audio_stream = ExtResource("6_ldklj")
+closed_audio_stream = ExtResource("7_p06tu")
+clicked_audio_stream = ExtResource("8_1xrcu")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MainArea"]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MainArea/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MainArea/MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MainArea/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Sandbox Demo"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MainArea/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MainArea/MarginContainer/PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MainArea/MarginContainer/PanelContainer/VBoxContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 20
+text = "Select a tool on the right-hand panel to begin!
+
+Press the magnifying glass icon to pick an object.
+
+=== [ Selection Tool ] ===
+
+L-Click: Select/Grab an object.
+Left/Right Arrow: Rotate an object.
+Up/Down Arrow: Scale an object.
+Ctrl+L-Click: Delete an object
+
+
+=== [ Shape Edit Tool ] ===
+
+L-Click on shape: Enter edit mode
+R-Click: Finish constructing shape
+
+
+=== [ Material Brush Tool ] ===
+
+L-Click on shape: Change to random material
+
+
+=== [ Camera ] ===
+
+WASD: Pan direction
++/= : Zoom in/out"
+
+[node name="ToolboxArea" type="Control" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
